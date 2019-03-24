@@ -61,6 +61,7 @@ class WebComponent extends HTMLElement {
     super();
     this.$wcs = { // record shadowRoot; which allows "closed" to work
       shadowRoot: this.attachShadow({mode:'open'}), 
+      $wc: this,
     };
     const vueDefinition = this.vueDefinition;
     if(typeof vueDefinition.shadowCss === 'string' && vueDefinition.shadowCss.length) {
@@ -87,16 +88,23 @@ class WebComponent extends HTMLElement {
     let el = this.$wcs.shadowRoot.firstElementChild;
     if(el.nextElementSibling) el = el.nextElementSibling;
     const parent = this.getParentVueOf(this);
+    const vueDefinition = this.vueDefinition; // _super|_proto__
+    const data = this.$wcs.data = (typeof vueDefinition.data === 'function') 
+      ? vueDefinition.data() : vueDefinition.data /* wrong pattern */;
+    // vue.connect: create singleton $options instance from defn
     this.$wcs.vue = new Vue(this.$wcs.vueDefinition = {
-      __proto__: this.vueDefinition,
+      __proto__: vueDefinition, // super: (ess)
       el: el,
+      data: data,
       parent: parent,
     });
   }
   disconnectedCallback() {
     // Remove from this.$wcs.vue.parent
+    // vue.disconnect
   }
   adoptedCallback() {
     // Reattach to new parent: this.$wcs.vue.parent
+    // vue.reparent
   }
 };
