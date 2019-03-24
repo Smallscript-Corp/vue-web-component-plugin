@@ -98,6 +98,7 @@ class WebComponent extends HTMLElement {
       data: data,
       parent: parent,
     });
+    // Revue: for "shadow-copying" capture data here in case vue proxy-shimmed it
   }
   disconnectedCallback() {
     // Remove from this.$wcs.vue.parent

@@ -9,16 +9,22 @@ const defn = {
   template: `<div>
     <div @click.stop="surprise">Root: {{$root.name}} and Shadow: {{name}}</div>
     <slot></slot></div>`,
-  data: function () { return { 
-    name: 'I am shadow', 
-  };},
-  methods: { 
+  provide: {},          // data:export-vars (inject-pools)
+  inject: [],           // data:import-vars:ancestor-provide-exports
+  props: [],            // data:import-vars:v-bind:attribs (v-bind="pool"; :bound-attribs)
+  // defn.data-function (below) called on each tagName-v-element to construct data
+  data: function () { return {
+    name: 'I am shadow',// data:internal-vars:reactive (defaults: $store, $root, $parent)
+   };},
+  computed: {           // data:internal-vars:getters (cached-computation-jsprops)
+  },
+  methods: {            // data:internal-methods (non-cached)
     surprise() { window.alert('ShadowDOM clicked'); }, 
   },
-  shadowCss: `
-    :host > * > :not(slot) {
+  shadowCss:            // FLAG: if `shadowCss in defn` then WebComponent, not VueComponent
+  ` :host > * > :not(slot) {
       color: green;
-    }`,
+  }`,
 }
 Vue.use(AeWc, {isEnabled:false,});
 Vue.component(defn.tagName, defn);
