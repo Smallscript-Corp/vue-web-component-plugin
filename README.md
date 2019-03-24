@@ -1,5 +1,5 @@
 # vue-web-component-plugin
-Use existing **Vue** `VueComponent` `vueDefinitions` as native DOM `WebComponents` supporting **shadow DOM** _semantics_ for native `slot` _elements_ and `shadowRoot` _fragments_ including **css** _encapsulation scoping_.
+Use existing **Vue** `VueComponent` `vueDefinitions` as native DOM `WebComponents` supporting **shadow DOM** _semantics_ for native `slot` _elements_ and _(open or closed)_ `shadowRoot` _fragments_ including **css** _encapsulation scoping_.
 
 See `examples/`.
 
