@@ -1,5 +1,5 @@
 # vue-web-component-plugin
-Use any existing Vue definitions as native WebComponents.
+Use existing Vue definitions as native WebComponents.
 
 See `examples/`.
 
