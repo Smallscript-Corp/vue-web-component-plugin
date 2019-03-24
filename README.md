@@ -1,9 +1,9 @@
 # vue-web-component-plugin
 Use existing **Vue** `VueComponent` `vueDefinitions` as native DOM `WebComponents` supporting **shadow DOM** _semantics_ for native `slot` _elements_ and _(open or closed)_ `shadowRoot` _fragments_ including **css** _encapsulation scoping_.
 
-See `examples/`.
+See [`examples/`](https://github.com/Smallscript-Corp/vue-web-component-plugin/blob/master/examples/example1.html).
 
-You will need both files in the `src/` directory. The changes to *vue.js*
+You will need both files in the [`src/`](https://github.com/Smallscript-Corp/vue-web-component-plugin/tree/master/src) directory. The changes to *vue.js*
 are minor and in three places. For details on what and why, read [this
 posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49).
 
