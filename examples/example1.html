@@ -1,0 +1,41 @@
+<style md-default>
+  ae-app:not(:defined) { visibility: hidden; }
+</style>
+<script type=module>
+import 'vue.js';
+import {default as AeWc} from 'vue-wc-plugin.mjs';
+const defn = {
+  tagName: 'ae-wc',
+  template: `<div>
+    <div @click.stop="surprise">Root: {{$root.name}} and Shadow: {{name}}</div>
+    <slot></slot></div>`,
+  data: function () { return { 
+    name: 'I am shadow', 
+  };},
+  methods: { 
+    surprise() { window.alert('ShadowDOM clicked'); }, 
+  },
+  shadowCss: `
+    :host > * > :not(slot) {
+      color: green;
+    }`,
+}
+Vue.use(AeWc, {isEnabled:false,});
+Vue.component(defn.tagName, defn);
+console.log("WTF",AeWc);
+new Vue({
+  el: '#app',
+  data: {
+    name:'Go native!', 
+  },
+  methods: { 
+    surprise() { window.alert('LightDOM clicked'); }, 
+  },
+  mounted() {
+    AeWc.isEnabled = true;
+  },
+});
+</script>
+<div id=app>
+  <ae-wc @click.stop="surprise">{{name}}!!</ae-wc>
+</div>
