@@ -87,7 +87,7 @@ class WebComponent extends HTMLElement {
     if(!this.isConnected || this.$wcs.vue) return;
     let el = this.$wcs.shadowRoot.firstElementChild;
     if(el.nextElementSibling) el = el.nextElementSibling;
-    const parent = this.getParentVueOf(this);
+    const $this = this; const parent = this.getParentVueOf(this);
     const vueDefinition = this.vueDefinition; // _super|_proto__
     const data = this.$wcs.data = (typeof vueDefinition.data === 'function') 
       ? vueDefinition.data() : vueDefinition.data /* wrong pattern */;
@@ -95,10 +95,10 @@ class WebComponent extends HTMLElement {
     this.$wcs.vue = new Vue(this.$wcs.vueDefinition = {
       __proto__: vueDefinition, // super: (ess)
       el: el,
+      $wc: $this,
       data: data,
       parent: parent,
     });
-    // Revue: for "shadow-copying" capture data here in case vue proxy-shimmed it
   }
   disconnectedCallback() {
     // Remove from this.$wcs.vue.parent
