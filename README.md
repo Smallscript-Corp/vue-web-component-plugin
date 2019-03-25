@@ -13,8 +13,3 @@ posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49); and this
 posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49).
 
 >_This `plugin` as a `.mjs` **module** is included in the `EdgeShell` standard `.ess` asset libraries accessible from `EdgeScript`._
-
-<div id=vue-logo-wrapper style="color:red">
-  <span id=vue-logo>vue</span>
-  <span id=vue-other>supported</span>
-</div>    
