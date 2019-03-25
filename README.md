@@ -15,4 +15,4 @@ posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49).
 >_This `plugin` as a `.mjs` **module** is included in the `EdgeShell` standard `.ess` asset libraries accessible from `EdgeScript`._
 
 [![supported|vue](https://img.shields.io/badge/supported-vue-green.svg)](https://vuejs.org/)
-![libc|edgescript](https://img.shields.io/badge/libc-edgescript-orange.svg)
+![libc|edgescript](https://img.shields.io/badge/.af-edgescript-orange.svg)
