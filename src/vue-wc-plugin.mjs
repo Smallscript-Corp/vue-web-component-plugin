@@ -100,6 +100,13 @@ class WebComponent extends HTMLElement {
       parent: parent,
     });
   }
+  attributeChangedCallback(name, oldValue, newValue) {
+    // Propagate call on to the vue, if it has such a fn
+    if(this.$wcs.vue && this.$wcs.vue.attributeChangedCallback)
+      this.$wcs.vue.attributeChangedCallback.call(
+        this.$wcs.vue, name, oldValue, newValue, this
+      );
+  }
   disconnectedCallback() {
     // Remove from this.$wcs.vue.parent
     // vue.disconnect
