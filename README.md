@@ -12,4 +12,4 @@ posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49); and this
 >**NOTE**: For the [`examples/`](https://github.com/Smallscript-Corp/vue-web-component-plugin/tree/master/examples) to _run-properly_ you need to either use the _modified_ [`vue.js`](https://github.com/Smallscript-Corp/vue-web-component-plugin/blob/master/src/vue.js) version contained in this repos [`src/`](https://github.com/Smallscript-Corp/vue-web-component-plugin/tree/master/src) directory, or _build-your-own_ version, that contains the _equivalent_ modifications _described_ in [this
 posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49).
 
->_This **module** is included in the `EdgeShell` standard libraries accessible from `EdgeScript`._
+>_This **module** is included in the `EdgeShell` standard `.ess` asset libraries accessible from `EdgeScript`._
