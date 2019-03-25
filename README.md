@@ -14,7 +14,38 @@ posting](https://github.com/vuejs/vue-web-component-wrapper/issues/49).
 
 >_This `plugin` as a `.mjs` **module** is included in the `EdgeShell` standard `.ess` asset libraries accessible from `EdgeScript`._
 
+<style> 
+  #vue-logo-wrapper > * {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    --border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    
+    padding: 2px; 
+    
+    color: white;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 12px;
+  }
+  
+  #vue-logo {
+    background:green; 
+    border-radius: 3px 0 0 3px;  
+  }
+  #vue-other {
+    background:#35495e; 
+    border-radius: 0 3px 3px 0;  
+  }
+  #vue-logo-wrapper {
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    margin: 0px;
+  }
+</style>
 <div id=vue-logo-wrapper>
   <span id=vue-logo>vue</span>
   <span id=vue-other>supported</span>
-</div>                 
+</div>    
